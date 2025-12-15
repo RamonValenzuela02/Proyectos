@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "kernel.h": "c",
+        "memoria.h": "c",
+        "cpu.h": "c",
+        "io.h": "c",
+        "gestor_memoria.h": "c",
+        "conexiones.h": "c",
+        "gestor_kernel.h": "c",
+        "gestor_io.h": "c",
+        "gestor_cpu.h": "c",
+        "conexiones_con_io.h": "c",
+        "planificacion_largo_plazo.h": "c",
+        "planificador_corto_plazo.h": "c",
+        "manejo_de_io.h": "c",
+        "syscalls_y_utils.h": "c",
+        "inicializacion.h": "c"
+    }
+}

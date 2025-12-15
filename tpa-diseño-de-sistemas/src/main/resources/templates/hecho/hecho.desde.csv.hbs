@@ -1,0 +1,23 @@
+{{#partial "head"}}
+    <title> Importar Hechos CSV - MetaMapa </title>
+    <link rel="stylesheet" href="/assets/admin/importar-hechos.css">
+{{/partial}}
+
+{{#partial "contenido-main"}}
+    <div class="contenedor-form">
+        <form hx-post="/admin/hechos/importacion"
+              hx-target="#resultado-importacion"
+              enctype="multipart/form-data"
+              class="form-importar">
+          <h1> Importar Hechos desde Archivo CSV </h1>
+          <label for="archivoCsv">Archivo CSV</label>
+          <input type="file" name="archivoCsv" accept=".csv" required>
+
+          <button type="submit" class="btn">Importar Hechos</button>
+        </form>
+    </div>
+
+    <div id="resultado-importacion" class="resultado-importacion"></div>
+{{/partial}}
+
+{{> templates/layout/layout.administrador}}

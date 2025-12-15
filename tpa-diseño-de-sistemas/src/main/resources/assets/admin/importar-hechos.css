@@ -1,0 +1,107 @@
+.contenedor-form {
+    display: flex;
+    justify-content: center;
+}
+
+.form-importar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px ;
+}
+
+.form-importar h1{
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.form-importar label {
+    align-self: flex-start;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.form-importar input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-importar .btn {
+    margin-top: 10px;
+    color: white;
+    width: 100%;
+}
+
+.container-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.tarjeta-hecho {
+    width: 100%;
+    max-width: 340px;
+    min-height: 200px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.hecho-titulo {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.3;
+    max-width: 75%;
+}
+
+.hecho-categoria {
+    background-color: #e6f3f7;
+    color: #006f8a;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hecho-descripcion {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.4;
+    margin: 0 0 16px 0;
+}
+
+.hecho-provincia,
+.hecho-fecha,
+.hecho-carga {
+    font-size: 14px;
+    color: #1f2937;
+    line-height: 1.4;
+    font-weight: 800;
+}
+
+.hecho-data {
+    margin: 6px;
+}

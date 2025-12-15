@@ -1,0 +1,88 @@
+//  {
+//    "version": "0.2.0",
+//    "configurations": [
+//      {
+//        "name": "run",
+//        "type": "cppdbg",
+//        "request": "launch",
+//        "program": "${workspaceFolder}/bin/${workspaceFolderBasename}",
+//        "args": [],
+//        "stopAtEntry": false,
+//        "cwd": "${workspaceFolder}",
+//        "environment": [],
+//        "externalConsole": false,
+//        "linux": {
+//          "MIMode": "gdb"
+//        },
+//        "osx": {
+//          "MIMode": "lldb"
+//        },
+//        "setupCommands": [
+//          {
+//            "text": "-enable-pretty-printing",
+//            "ignoreFailures": true
+//          }
+//        ],
+//        "preLaunchTask": "build"
+//      }
+//    ]
+//  }
+
+{
+  "version": "0.2.0",
+  "configurations": [
+  
+    {
+      "name": "Debug CPU 1",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/cpu",
+      "args": ["1","./configs/prueba6/cpu1.config", "1"],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "linux": { "MIMode": "gdb" },
+      "osx": { "MIMode": "lldb" }
+    },
+    {
+      "name": "Debug CPU 2",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/cpu",
+      "args": ["2","./configs/prueba6/cpu2.config", "2"],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "linux": { "MIMode": "gdb" },
+      "osx": { "MIMode": "lldb" }
+    },
+    {
+      "name": "Debug CPU 3",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/cpu",
+      "args": ["3","./configs/prueba6/cpu3.config", "3"],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "linux": { "MIMode": "gdb" },
+      "osx": { "MIMode": "lldb" }
+    },    
+    {
+      "name": "Debug CPU 4",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/cpu",
+      "args": ["4","./configs/prueba6/cpu4.config","4"],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "linux": { "MIMode": "gdb" },
+      "osx": { "MIMode": "lldb" }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug CPUs 1 a 4",
+      "configurations": ["Debug CPU 1", "Debug CPU 2", "Debug CPU 3", "Debug CPU 4"]
+    }
+  ]
+}
+
+

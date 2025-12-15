@@ -1,0 +1,4 @@
+GOTO 0
+IO 25000
+INIT_PROC proceso1 256
+EXIT

@@ -1,0 +1,35 @@
+{{#partial "head"}}
+    <link rel="stylesheet" href="/assets/login.css">
+    <title> Iniciar Sesión - MetaMapa</title>
+{{/partial}}
+
+{{#partial "navbar"}} {{/partial}}
+{{#partial "footer"}} {{/partial}}
+
+{{#partial "contenido-main"}}
+    <div class="login-container">
+
+        <div class="titulo-container">
+            <img src="/images/metamapa.jpeg" class="logo" alt="MetaMapa">
+            <span class="titulo"> MetaMapa </span>
+        </div>
+
+        <form method="POST" action="/login" class="form-login">
+            <div class="form-field">
+                <input type="text" placeholder="Usuario" name="nombre" required>
+            </div>
+
+            <div class="form-field">
+                <input type="password" placeholder="••••••••••••" name="password" required>
+            </div>
+            {{error}}
+            <div class="form-field">
+                <input type="submit" class="boton form-button" value="Iniciar Sesion">
+            </div>
+        </form>
+
+        <p class="registro"> ¿No tenes cuenta? <a href="/registrarse" class="link">Registrate</a> </p>
+     </div>
+{{/partial}}
+
+{{> templates/layout/layout}}

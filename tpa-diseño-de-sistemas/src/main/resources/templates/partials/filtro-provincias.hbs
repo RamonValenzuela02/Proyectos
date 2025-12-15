@@ -1,0 +1,10 @@
+<option value=""
+        {{#unless provinciaSeleccionada}}selected{{/unless}}>
+    Todas las provincias
+</option>
+{{#each provincias}}
+    <option value="{{this}}"
+        {{#eq this ../provinciaSeleccionada}}selected{{/eq}}>
+        {{this}}
+    </option>
+{{/each}}

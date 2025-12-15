@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang= "es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="icon" type="image/jpeg" href="/images/metamapa.jpeg">
+    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
+
+    {{!-- Inyectar CSS y Titulo de la vista que corresponda --}}
+    {{#block "head"}}
+        <title> MetaMapa </title>
+    {{/block}}
+</head>
+
+<body>
+    {{#block "navbar"}}
+        <header class="header">
+            <nav class="home-nav">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="/home" class="nav-logo">
+                            <img src="/images/metamapa.jpeg" class="logo" alt="MetaMapa">
+                            <span class="logo-text"> MetaMapa </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item"> {{#block "crear-hecho"}}{{/block}} </li>
+                    <li class="nav-item nav-search"> {{#block "busqueda"}}{{/block}} </li>
+                    <li class="nav-item"> {{#block "boton-login"}}{{/block}} </li>
+                </ul>
+            </nav>
+        </header>
+    {{/block}}
+<main>
+    {{#block "breadcrumb"}}{{/block}}
+    {{#block "contenido-main"}}{{/block}}
+</main>
+
+{{#block "footer"}}
+    <footer>
+        <p> UTN FRBA - Diseño de Sistemas - Grupo 26 </p>
+    </footer>
+{{/block}}
+</body>
+
+</html>

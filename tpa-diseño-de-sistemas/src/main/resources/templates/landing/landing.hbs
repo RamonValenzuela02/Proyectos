@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>MetaMapa</title>
+  <link rel="icon" type="image/jpeg" href="/images/metamapa.jpeg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/landing.css">
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="container-metamapa">
+      <h1 class="titulo-principal"> MetaMapa </h1>
+      <p class="descripcion">
+        MetaMapa es una plataforma que reúne hechos provenientes de múltiples fuentes en
+        un único lugar, para que puedas explorarlos, filtrarlos y contribuir cargando nuevos hechos.
+      </p>
+      <a href="/home" class="boton">Comenzá a explorar</a>
+    </div>
+  </header>
+
+  <section class="colecciones">
+    <div class="titulo-secundario">
+      <h2> Empezá a navegar algunas de nuestras colecciones </h2>
+    </div>
+    <div class="container-colecciones">
+      <div class="item-coleccion"> <a href="/home?coleccionId=24" class="btn btn-outline-secondary btn-coleccion">Incendios Forestales</a></div>
+      <div class="item-coleccion"> <a href="/home?coleccionId=26" class="btn btn-outline-secondary btn-coleccion">Accidentes Viales</a> </div>
+      <div class="item-coleccion"> <a href="/home?coleccionId=28" class="btn btn-outline-secondary btn-coleccion">Homicidios Dolosos</a> </div>
+    </div>
+  </section>
+
+  <section class="estadisticas">
+    <div class="container-estadisticas">
+      <div class="item-estadistica">
+        <h3>{{cantidad-hechos}}</h3>
+        <p>Hechos cargados</p>
+      </div>
+
+      <div class="item-estadistica">
+        <h3>{{cantidad-fuentes}}</h3>
+        <p>Fuentes conectadas</p>
+      </div>
+
+      <div class="item-estadistica">
+        <h3>{{cantidad-colecciones}}</h3>
+        <p>Colecciones creadas</p>
+      </div>
+    </div>
+
+    <div class="mapa">
+      {{>templates/hecho/mapa}}
+    </div>
+  </section>
+
+  <footer class="footer">
+      <div class="footer-container">
+
+          <div class="footer-brand">
+              <h2>MetaMapa</h2>
+              <p>Plataforma para explorar hechos de diversas fuentes.</p>
+          </div>
+
+          <div class="footer-links">
+              <h3>Informacion</h3>
+              <ul>
+                  <li><a href="#">Términos y Condiciones</a></li>
+                  <li><a href="#">Política de Privacidad</a></li>
+                  <li><a href="#">Cambios y Devoluciones</a></li>
+                  <li><a href="#">Preguntas Frecuentes</a></li>
+                  <li><a href="#">Nuestras Sucursales</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-contact">
+              <h3>Contacto</h3>
+              <ul>
+                  <li>Email: contacto@metamapa.com</li>
+                  <li>Proyecto académico - UTN</li>
+              </ul>
+          </div>
+
+      </div>
+
+      <div class="footer-bottom">
+          <p>© 2025 MetaMapa - Trabajo Práctico - Grupo 26</p>
+      </div>
+  </footer>
+
+</body>
+
+</html>

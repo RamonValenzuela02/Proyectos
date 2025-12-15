@@ -1,0 +1,29 @@
+name: Consensuar Hechos (cada 30 min)
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  consensuar_hechos:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_URL: ${{ secrets.DB_URL }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build jars
+        run: mvn clean package -Dmaven.test.skip=true -DskipTests
+
+      - name: Ejecutar tarea ConsensuarHechos
+        run: java -jar target/consensuar-hechos-jar-with-dependencies.jar

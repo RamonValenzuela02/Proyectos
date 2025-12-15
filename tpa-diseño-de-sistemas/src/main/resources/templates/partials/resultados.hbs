@@ -1,0 +1,33 @@
+{{#if hechos}}
+  {{#each hechos}}
+    <div class="tarjeta-hecho">
+
+      <div class="hecho-data">
+        <h2 class="hecho-titulo">{{titulo.toUpperCase}}</h2>
+        <span class="hecho-categoria">{{categoria}}</span>
+      </div>
+
+      <div class="hecho-data">
+        <p class="hecho-descripcion">{{descripcion}}</p>
+      </div>
+
+      <div class="hecho-data">
+        <span class="hecho-provincia"> Ocurrio en:</span>
+        <span> {{provincia}}</span>
+      </div>
+
+      <div class="hecho-data">
+        <span class="hecho-fecha"> Fecha:</span>
+        <span> {{fechaHecho.getDayOfMonth}}/{{fechaHecho.getMonthValue}}/{{fechaHecho.getYear}} {{fechaHecho.getHour}}:{{fechaHecho.getMinute}}:{{fechaHecho.getSecond}} </span>
+      </div>
+
+      <div class="hecho-data">
+        <a class="boton" href="/hechos/{{id}}">
+            Ver Detalle
+        </a>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>No se encontraron hechos con los filtros seleccionados.</p>
+{{/if}}

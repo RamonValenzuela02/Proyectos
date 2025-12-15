@@ -1,0 +1,72 @@
+{{#partial "head"}}
+  <link rel="stylesheet" href="/assets/hecho-detalle.css">
+  <title> {{hecho.titulo}} - MetaMapa</title>
+{{/partial}}
+
+{{#partial "boton-login"}}
+    {{#if usuarioLogueado}}
+        <a class="link-sesion" href="/logout" class="nav-login">Cerrar Sesión</a>
+    {{else}}
+        <a class="link-sesion" href="/login" class="nav-login">Iniciar Sesión</a>
+    {{/if}}
+{{/partial}}
+
+{{#partial "breadcrumb"}}
+    <div class="breadcrumb-container">
+        <a href="/home" class="breadcrumb-link">Hechos</a>
+        <span class="breadcrumb-separador"> > </span>
+        <span class="breadcrumb-pagina"> {{hecho.titulo}} </span>
+    </div>
+{{/partial}}
+
+{{#partial "contenido-main"}}
+<section class="hecho-detalle">
+
+    <header class="titulo">
+        <h1>{{hecho.titulo.toUpperCase}}</h1>
+        {{#if hecho.categoria}}<span class="categoria">{{hecho.categoria}}</span>{{/if}}
+    </header>
+
+  <div class="container">
+    <div class="tarjeta-hecho">
+      <h2>Descripción</h2>
+      <div class="descripcion">
+          <p>{{hecho.descripcion}}</p>
+      </div>
+    </div>
+
+    <div class="tarjeta-hecho">
+      <h2>Datos</h2>
+      <ul class="datos">
+        {{#if hecho.provincia}}<li><strong>Ocurrio en:</strong> {{hecho.provincia}}</li>{{/if}}
+        {{#if hecho.fechaHecho}}<li><strong>Fecha del suceso:</strong> {{hecho.fechaHecho.getDayOfMonth}}/{{hecho.fechaHecho.getMonthValue}}/{{hecho.fechaHecho.getYear}} {{hecho.fechaHecho.getHour}}:{{hecho.fechaHecho.getMinute}}:{{hecho.fechaHecho.getSecond}}</li>{{/if}}
+        {{#if hecho.fechaCarga}}<li><strong>Fecha de carga:</strong> {{hecho.fechaCarga.getDayOfMonth}}/{{hecho.fechaCarga.getMonthValue}}/{{hecho.fechaCarga.getYear}} {{hecho.fechaCarga.getHour}}:{{hecho.fechaCarga.getMinute}}:{{hecho.fechaCarga.getSecond}}</li>{{/if}}
+        {{#if hecho.fuente}}<li><strong>Fuente:</strong> {{hecho.fuente.id}}</li>{{/if}}
+      </ul>
+    </div>
+  </div>
+
+<section class="galeria-multimedia">
+  {{#each hecho.archivosMultimedia}}
+      <img src="{{rutaArchivo}}" class="media-item"/>
+  {{/each}}
+</section>
+
+  <div class="actions">
+    {{#if solicitudEnviada}}
+        <div class="sol-eliminacion">
+            Tu solicitud de eliminación fue enviada.
+        </div>
+    {{/if}}
+    <form action="/solicitud/nueva" method="get" class="form-sol-eliminacion">
+      <input type="hidden" name="hechoId" value="{{hecho.id}}">
+      <button type="submit" class="btn btn-outline-danger">Solicitar Eliminar</button>
+    </form>
+
+  </div>
+
+</section>
+{{/partial}}
+{{#partial "footer"}} {{/partial}}
+
+{{> templates/layout/layout}}

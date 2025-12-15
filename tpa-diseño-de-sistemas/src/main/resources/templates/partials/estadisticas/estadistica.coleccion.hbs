@@ -1,0 +1,30 @@
+{{#if coleccion}}
+  <div class="tarjeta-estadistica-coleccion">
+    <h2>Estadísticas de la colección</h2>
+
+    <p class="estadistica-coleccion-titulo">
+      <strong>Colección:</strong> {{coleccion.titulo}}
+    </p>
+
+    <p>
+      <strong>Total de hechos en la colección:</strong>
+      {{cantidadHechos}}
+    </p>
+
+    {{#if provincia}}
+      <p>
+        <strong>Provincia con más hechos:</strong>
+        {{provincia}}
+      </p>
+
+      <p>
+        <strong>Hechos en esa provincia:</strong>
+        {{cantidadHechosProvincia}}
+      </p>
+    {{else}}
+      <p>No hay hechos asociados a esta colección aún.</p>
+    {{/if}}
+  </div>
+{{else}}
+  <p>No se pudo cargar la información de la colección.</p>
+{{/if}}

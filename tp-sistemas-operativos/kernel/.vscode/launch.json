@@ -1,0 +1,59 @@
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "name": "run",
+//       "type": "cppdbg",
+//       "request": "launch",
+//       "program": "${workspaceFolder}/bin/${workspaceFolderBasename}",
+//       "args": [],
+//       "stopAtEntry": false,
+//       "cwd": "${workspaceFolder}",
+//       "environment": [],
+//       "externalConsole": false,
+//       "linux": {
+//         "MIMode": "gdb"
+//       },
+//       "osx": {
+//         "MIMode": "lldb"
+//       },
+//       "setupCommands": [
+//         {
+//           "text": "-enable-pretty-printing",
+//           "ignoreFailures": true
+//         }
+//       ],
+//       "preLaunchTask": "build"
+//     }
+//   ]
+// }
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "Debug Kernel",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/kernel",
+      "args": ["ESTABILIDAD_GENERAL","0","./configs/prueba6/kernel1.config"], 
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "linux": {
+        "MIMode": "gdb"
+      },
+      "osx": {
+        "MIMode": "lldb"
+      },
+      "setupCommands": [
+        {
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build"
+    }
+  ]
+}
+

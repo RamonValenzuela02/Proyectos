@@ -1,0 +1,60 @@
+{{#partial "head"}}
+    <link rel="stylesheet" href= "/assets/hecho-nuevo.css">
+    <title> Agregar Hecho - MetaMapa</title>
+{{/partial}}
+
+{{#partial "boton-login"}}
+    {{#if usuarioLogueado}}
+        <a class="link-sesion" href="/logout" class="nav-login">Cerrar Sesión</a>
+    {{else}}
+        <a class="link-sesion" href="/login" class="nav-login">Iniciar Sesión</a>
+    {{/if}}
+{{/partial}}
+
+{{#partial "breadcrumb"}}
+    <div class="breadcrumb-container">
+        <a href="/home" class="breadcrumb-link">Hechos</a>
+        <span class="breadcrumb-separador"> > </span>
+        <span class="breadcrumb-pagina"> Agregar Hecho </span>
+    </div>
+{{/partial}}
+
+{{#partial "contenido-main"}}
+
+    <div class="form-container">
+        <form action="/hechos" method="POST" enctype="multipart/form-data" class="form-hecho">
+            <h1> Agregar Hecho </h1>
+
+            <label for="titulo">Titulo</label>
+            <input type="text" name="titulo" required>
+
+            <label for="descripcion">Descripcion</label>
+            <textarea name="descripcion" required></textarea>
+
+            <label for="categoria">Categoria</label>
+            <select name="categoria" required>
+                <option value="" disable selected> Seleccioná Categoría </option>
+                    {{#each categorias}}
+                        <option value="{{this}}"> {{this}} </option>
+                    {{/each}}
+            </select>
+
+            <label for="latitud">Latitud</label>
+            <input type="text" name="latitud" required>
+
+            <label for="longitud">Longitud:</label>
+            <input type="text" name="longitud" required>
+
+            <label for="fecha">Fecha del Hecho:</label>
+            <input type="datetime-local" name="fecha" required>
+            {{#if usuarioLogueado}}
+                <label for="multimedia">Imágenes o Videos</label>
+                <input type="file" name="multimedia[]" multiple accept="image/*,video/*,audio/*,application/pdf">
+            {{/if}}
+            <button type="submit" class="boton">Agregar Hecho</button>
+        </form>
+    </div>
+{{/partial}}
+{{#partial "footer"}} {{/partial}}
+
+{{> templates/layout/layout}}

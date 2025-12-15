@@ -1,0 +1,13 @@
+<div id="resultados" class="container-tarjetas" hx-swap-oob="true">
+    {{> templates/partials/resultados}}
+</div>
+
+<div id="filtro-provincias" hx-swap-oob="innerHTML">
+    <select name="provincia"
+            class="filtro-select"
+            hx-get="/home"
+            hx-trigger="change"
+            hx-include="[name='coleccionId'], [name='modoNavegacion'], [name='fechaDesde'], [name='fechaHasta']">
+        {{> templates/partials/filtro-provincias}}
+    </select>
+</div>

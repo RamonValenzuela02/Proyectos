@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Light", sans-serif;
+}
+
+body {
+    background-color: #f0f1f5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registro-container {
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    height:80vh;
+    max-width: 420px;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-registro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field {
+    text-align: center;
+}
+
+.titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.titulo {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #242c37;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #222222;
+    text-align: center;
+}
+
+input:focus {
+    border-color: #007bff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-button {
+    width: 100%;
+}
+
+.form-button:hover {
+    filter: brightness(1.06);
+}
+
+.registro {
+    margin-top: 50px;
+    color: #7e8ba3;
+}
+
+.registro .link {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+}

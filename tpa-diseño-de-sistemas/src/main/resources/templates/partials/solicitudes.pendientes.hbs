@@ -1,0 +1,49 @@
+{{#if tieneSolicitudesPendientes}}
+    {{#each solicitudesPendientes}}
+        <div class="hecho-data">
+            <span class="solicitud-id"> Solicitud ID:</span>
+            <span> {{id}}</span>
+        </div>
+
+        <div class="hecho-data">
+            <span class="solicitud-fecha"> Fecha solicitud de eliminacion:</span>
+            <span> {{fechaSolicitud.getDayOfMonth}}/{{fechaSolicitud.getMonthValue}}/{{fechaSolicitud.getYear}} {{fechaSolicitud.getHour}}:{{fechaSolicitud.getMinute}}:{{fechaSolicitud.getSecond}} </span>
+        </div>
+
+        <div class="hecho-data">
+            <span class="solicitud-motivo"> Motivo:</span>
+            <span>{{motivo}}</span>
+        </div>
+
+        <div class="hecho-data">
+            <span class="solicitud-estado"> Estado:</span>
+            <span>{{estado}}</span>
+        </div>
+
+        <form class="form-sol-eliminacion"
+              hx-post="/admin/solicitudes/{{id}}"
+              hx-target="#solicitudesPendientes">
+          <div class="hecho-data">
+              <input type="hidden" name="eleccion" value="APROBADA">
+              <button class="btn aceptar-solicitud" type="submit"> Aceptar Solicitud </button>
+          </div>
+        </form>
+
+        <form class="form-sol-eliminacion"
+              hx-post="/admin/solicitudes/{{id}}"
+              hx-target="#solicitudesPendientes"
+               hx-push-url="true"
+               hx-trigger="submit">
+          <div class="hecho-data">
+              <input type="hidden" name="eleccion" value="RECHAZADA">
+              <button class="btn rechazar-solicitud" type="submit"> Rechazar Solicitud </button>
+          </div>
+        </form>
+
+        <div class="hecho-data">
+          <a class="btn detalle-hecho" href="/hechos/{{hecho.id}}"> Ver Hecho </a>
+        </div>
+    {{/each}}
+{{else}}
+  <p>No hay solicitudes pendientes de revisión.</p>
+{{/if}}

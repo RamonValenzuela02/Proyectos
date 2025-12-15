@@ -1,0 +1,54 @@
+.contenedor-form {
+    display: flex;
+    justify-content: center;
+}
+.form-coleccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px ;
+}
+
+.form-coleccion h1{
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.form-coleccion label {
+    align-self: flex-start;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.form-coleccion input,
+.form-coleccion textarea,
+.form-coleccion span,
+.form-coleccion select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-coleccion textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-coleccion .btn {
+    margin-top: 10px;
+    color: white;
+    width: 100%;
+}

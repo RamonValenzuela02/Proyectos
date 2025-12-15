@@ -1,0 +1,142 @@
+.contenedor-padre {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+    padding: 28px 70px;
+}
+
+.container-filtros {
+    background-color: aliceblue;
+    border-radius: 6px;
+    padding:20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    color: #333;
+    gap: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.container-filtros-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 16px;
+}
+.lista-estados {
+    list-style: none;
+}
+
+.lista-estados,
+.lista-ubicacion,
+.lista-fecha {
+    margin-top: 8px;
+}
+
+.lista-navegacion li {
+    padding: 5px;
+}
+
+.container-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.tarjeta-solicitud {
+    width: 100%;
+    max-width: 340px;
+    min-height: 200px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.solicitud-id,
+.solicitud-fecha,
+.solicitud-motivo,
+.solicitud-estado {
+    font-size: 14px;
+    color: #1f2937;
+    line-height: 1.4;
+    font-weight: 800;
+}
+
+.hecho-data {
+    margin: 6px;
+}
+
+.hecho-data .btn {
+    width: 100%;
+}
+
+.formularios {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formularios .btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.aceptar-solicitud {
+    background-color: #e6ffed;
+    border: 1px solid #6ccf88;
+    color: #0b4f2c;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 9px 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.aceptar-solicitud:hover {
+    background-color: #d8ffe2;
+    border-color: #59b977;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.rechazar-solicitud {
+    background-color: #ffe6e6;
+    border: 1px solid #cf6c6c;
+    color: #4f0b0b;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 9px 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.rechazar-solicitud:hover {
+    background-color: #ffd6d6;
+    border-color: #c15555;
+    cursor: pointer;
+}
+
+.detalle-hecho {
+    background-color: #e6f0ff;
+    border: 1px solid #6c9bcf;
+    color: #0b2f4f;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 9px 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,39 @@
+{{#partial "head"}}
+    <title> Solicitudes - MetaMapa </title>
+    <link rel="stylesheet" href="/assets/solicitudes-listado.css">
+{{/partial}}
+
+{{#partial "contenido-main"}}
+    <div class="contenedor-padre">
+        <div class="container-filtros">
+            <form class="form-filtros"
+                hx-get="/admin/solicitudes"
+                hx-target="#resultados-solicitudes"
+                hx-push-url="true"
+                hx-trigger="change">
+
+                <label class="container-filtros-label"> Estado </label>
+                <ul class="lista-estados">
+                    <li>
+                        <input id="estado-aceptada" type="radio" name="estado" value="ACEPTADA"/>
+                        <label for="estado-aceptada"> Aceptadas </label>
+                    </li>
+                    <li>
+                        <input id="estado-rechazada" type="radio" name="estado" value='RECHAZADA'/>
+                        <label for="estado-rechazada"> Rechazadas </label>
+                    </li>
+                    <li>
+                        <input id="estado-pendiente" type="radio" name="estado" value='PENDIENTE'/>
+                        <label for="estado-pendiente"> Pendientes </label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div id="resultados-solicitudes" class="container-tarjetas">
+            {{> templates/partials/resultados.solicitudes}}
+        </div>
+    </div>
+
+{{/partial}}
+{{> templates/layout/layout.administrador}}

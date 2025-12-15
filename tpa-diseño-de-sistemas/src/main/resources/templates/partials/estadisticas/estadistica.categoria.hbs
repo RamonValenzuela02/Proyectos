@@ -1,0 +1,22 @@
+{{#if provincia}}
+  <div class="tarjeta-estadistica-categoria">
+    <h2>Estadísticas por categoría</h2>
+
+    <p>
+      <strong>Categoría:</strong> {{categoria}}
+    </p>
+    <p>
+      <strong>Provincia con más hechos:</strong> {{provincia}}
+    </p>
+    <p>
+      <strong>Cantidad de hechos en esa provincia:</strong> {{cantidadHechos}}
+    </p>
+
+    <p>
+        <strong>Hora del día con más hechos:</strong>
+        {{hora}} horas
+    </p>
+  </div>
+{{else}}
+  <p>No hay hechos reportados para la categoría seleccionada.</p>
+{{/if}}

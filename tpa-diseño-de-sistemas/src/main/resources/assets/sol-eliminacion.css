@@ -1,0 +1,69 @@
+.sol-eliminacion {
+    display: flex;
+    justify-content: center;
+}
+.form-sol-eliminacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px ;
+}
+
+.form-sol-eliminacion h1{
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.form-sol-eliminacion label {
+    align-self: flex-start;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.form-sol-eliminacion input,
+.form-sol-eliminacion textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-sol-eliminacion textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-sol-eliminacion .boton {
+    margin-top: 10px;
+    color: white;
+    width: 100%;
+}
+
+.form-sol-eliminacion p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.form-sol-eliminacion p a {
+    color: #0077b6;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.form-sol-eliminacion p a:hover {
+    color: #004e70;
+}

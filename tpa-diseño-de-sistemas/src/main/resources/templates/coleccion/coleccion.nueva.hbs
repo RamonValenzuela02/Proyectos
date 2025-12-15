@@ -1,0 +1,68 @@
+{{#partial "head"}}
+    <link rel="stylesheet" href= "/assets/admin/coleccion-nueva.css">
+    <title> Nueva Coleccion - MetaMapa </title>
+{{/partial}}
+
+{{#partial "breadcrumb"}}
+    <div class="breadcrumb">
+        <a href="/admin/colecciones" class="breadcrumb-link">Colecciones</a>
+        <span class="breadcrumb-separador"> > </span>
+        <span class="breadcrumb-pagina"> Crear Coleccion </span>
+    </div>
+{{/partial}}
+{{#partial "contenido-main"}}
+   <div class="contenedor-form">
+    <form action="/admin/coleccion/nueva" method="post" class="form-coleccion">
+        <h1>Crear Nueva Colección</h1>
+
+        <label for="handle">Handle</label>
+        <input type="text" name="handle" required>
+
+        <label for="titulo">Titulo</label>
+        <input type="text" name="titulo" required>
+
+        <label for="descripcion">Descripcion</label>
+        <textarea name="descripcion" required></textarea>
+
+        <label for="fuente">Fuentes</label>
+        <select name="fuente" required>
+            {{#each fuentes}}
+                <option value="{{this.id}}"> {{this.id}} </option>
+            {{/each}}
+        </select>
+
+        <label for="categoria">Categoria</label>
+        <select name="categoria" required>
+                {{#each categorias}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+        </select>
+
+        <label for="fechaDesde">Fecha de Inicio los Hechos</label>
+        <input type="datetime-local" name="fechaDesde" required>
+
+        <label for="fechaHasta">Fecha de Fin los Hechos</label>
+        <input type="datetime-local" name="fechaHasta" required>
+
+        <label for="provincia">Provincia </label>
+        <select name="provincia">
+            <option value=""> Todas las Provincias </option>
+                {{#each provincias}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+        </select>
+
+        <label for="algoritmo">Algoritmo de Consenso</label>
+        <select name="algoritmo">
+            <option value=""> Ninguno </option>
+                {{#each algoritmos}}
+                    <option value="{{this}}"> {{this}} </option>
+                {{/each}}
+        </select>
+
+        <button type="submit" class="btn">Agregar Coleccion</button>
+    </form>
+   </div>
+{{/partial}}
+
+{{> templates/layout/layout.administrador}}

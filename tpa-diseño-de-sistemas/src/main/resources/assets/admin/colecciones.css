@@ -1,0 +1,76 @@
+.coleccion-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 0;
+    background-color: #f0f0f0;
+}
+
+.tabla-colecciones {
+    background-color: #f8f9fa;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 25px 35px;
+    max-width: 1200px;
+    width: 100%;
+    overflow: auto;
+}
+
+.encabezado,
+.fila-coleccion{
+    display: grid;
+    grid-template-columns: 0.5fr 0.8fr 1.2fr 1.6fr 0.6fr 1.2fr 0.7fr;
+    column-gap: 16px;
+    align-items: center;
+}
+
+.encabezado {
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.fila-coleccion {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.encabezado span,
+.fila-coleccion span {
+    white-space: normal;
+    word-break: normal;
+}
+
+.configuracion {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-configurar {
+    background-color: #4a6fa5;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-configurar:hover {
+    background-color: #395a86;
+}
+
+.crear-coleccion {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

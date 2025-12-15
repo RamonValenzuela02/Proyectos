@@ -1,0 +1,54 @@
+{{#partial "head"}}
+  <title>Solicitar eliminación - {{hecho.titulo}}</title>
+  <link rel="stylesheet" href="/assets/sol-eliminacion.css">
+{{/partial}}
+
+{{#partial "boton-login"}}
+    {{#if usuarioLogueado}}
+        <a class="link-sesion" href="/logout" class="nav-login">Cerrar Sesión</a>
+    {{else}}
+        <a class="link-sesion" href="/login" class="nav-login">Iniciar Sesión</a>
+    {{/if}}
+{{/partial}}
+
+{{#partial "breadcrumb"}}
+    <div class="breadcrumb-container">
+        <a href="/home" class="breadcrumb-link">Hechos</a>
+        <span class="breadcrumb-separador"> > </span>
+        <a href="/hechos/{{hecho.id}}" class="breadcrumb-link"> {{hecho.titulo}} </a>
+        <span class="breadcrumb-separador"> > </span>
+        <span class="breadcrumb-pagina"> Solicitar Eliminacion </span>
+    </div>
+{{/partial}}
+
+{{#partial "contenido-main"}}
+<section class="sol-eliminacion">
+    {{#if error}}
+      <div class="error">{{error}}</div>
+    {{/if}}
+
+    <form action="/solicitud/nueva" method="post" class="form-sol-eliminacion">
+        <h1>Solicitar Eliminación</h1>
+        <p>
+            Estás solicitando eliminar el hecho:
+            <a href="/hechos/{{hecho.id}}">"{{hecho.titulo}}"</a>
+        </p>
+
+        <input type="hidden" name="hechoId" value="{{hecho.id}}">
+
+        <label for="motivo">Motivo (mínimo 500 caracteres)</label>
+        <textarea
+          name="motivo"
+          minlength="500"
+          required
+          placeholder="Explicá por qué este hecho debería ser eliminado"
+        >{{motivo}}</textarea>
+
+        <button type="submit" class="boton">Enviar solicitud</button>
+    </form>
+</section>
+{{/partial}}
+{{#partial "footer"}} {{/partial}}
+
+{{> templates/layout/layout}}
+

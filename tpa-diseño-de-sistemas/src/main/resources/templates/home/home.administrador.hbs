@@ -1,0 +1,74 @@
+{{#partial "head"}}
+    <title> Panel de Administración - MetaMapa </title>
+    <link rel="stylesheet" href="/assets/admin/admin-home.css">
+{{/partial}}
+
+{{#partial "contenido-main"}}
+
+<div class="admin-dashboard">
+  <p class="dashboard-bienvenida">Hola, {{nombreUsuario}}</p>
+
+  <div class="admin-dashboard-grid">
+
+    <section class="admin-card">
+      <div class="admin-card-header">
+        <h2 class="admin-card-title">Estadísticas de la colección</h2>
+
+        <label for="coleccion" class="filtro-label">
+          Colección
+          <select name="id"
+                  id="coleccion"
+                  class="filtro-select"
+                  hx-get="/admin/estadisticas/coleccion"
+                  hx-target="#resultado-coleccion"
+                  hx-push-url="true"
+                  hx-trigger="change">
+              {{#each colecciones}}
+                  <option value="{{this.id}}">{{this.titulo}}</option>
+              {{/each}}
+          </select>
+        </label>
+      </div>
+
+      <div id="resultado-coleccion" class="admin-card-body">
+        {{> templates/partials/estadisticas/estadistica.coleccion}}
+      </div>
+    </section>
+
+    <section class="admin-card">
+      <div class="admin-card-header">
+        <h2 class="admin-card-title">Estadísticas por categoría</h2>
+
+        {{#if categoriaConMasHechos}}
+          <p class="admin-card-highlight">
+            <strong>Categoría con más hechos:</strong> {{categoriaConMasHechos}}
+            <br>
+            <span class="admin-card-highlight-sub">Hechos reportados: {{cantidadHechosCategoria}}</span>
+          </p>
+        {{/if}}
+
+        <label for="categoria" class="filtro-label">
+          Categoría
+          <select name="categoria"
+                  id="categoria"
+                  class="filtro-select"
+                  hx-get="/admin/estadisticas/categoria"
+                  hx-target="#resultado-categoria"
+                  hx-push-url="true"
+                  hx-trigger="change">
+              {{#each categorias}}
+                  <option value="{{this}}">{{this}}</option>
+              {{/each}}
+          </select>
+        </label>
+      </div>
+
+      <div id="resultado-categoria" class="admin-card-body">
+        {{> templates/partials/estadisticas/estadistica.categoria}}
+      </div>
+    </section>
+
+  </div>
+</div>
+{{/partial}}
+{{> templates/layout/layout.administrador}}

@@ -1,0 +1,102 @@
+{{#partial "head"}}
+    <link rel="stylesheet" href="/assets/home.css">
+    <title>MetaMapa</title>
+{{/partial}}
+
+{{#partial "crear-hecho"}}
+    <a href="/hechos/nuevo">Crear Hecho</a>
+{{/partial}}
+
+{{#partial "busqueda"}}
+    <div class="busqueda">
+        <form role="search"
+              hx-get="/home" hx-target="#resultados" hx-push-url="true" hx-trigger="submit"
+              class="form-busqueda">
+            <input type="search" name="likeTexto" placeholder="Buscar hecho por titulo..." value="{{busqueda}}" class="input-busqueda">
+            <button class="boton boton-buscar" type="submit"> Buscar </button>
+        </form>
+    </div>
+{{/partial}}
+
+{{#partial "boton-login"}}
+    {{#if usuarioLogueado}}
+        <a href="/logout">Cerrar Sesión</a>
+    {{else}}
+        <a href="/login">Iniciar Sesión</a>
+    {{/if}}
+{{/partial}}
+
+{{#partial "contenido-main"}}
+
+    <div class="contenedor-contenido">
+        <div class="container-filtros">
+            <form class="form-filtros"
+                  hx-get="/home"
+                  hx-target="#resultados"
+                  hx-push-url="true">
+
+            <div class="filtro-item">
+                <label class="filtro-label"> Seleccionar Coleccion </label>
+                    <select name="coleccionId" class="filtro-select"
+                            hx-get="/home"
+                            hx-trigger="change"
+                            hx-target="#resultados"
+                            hx-include="[name='modoNavegacion'], [name='fechaDesde'], [name='fechaHasta']">
+                        {{#each colecciones}}
+                            <option value="{{id}}"
+                                {{#eq id ../coleccionSeleccionada}}selected{{/eq}}>
+                                {{titulo}}
+                            </option>
+                        {{/each}}
+                    </select>
+            </div>
+
+            <div class="filtro-item">
+                <label class="filtro-label"> Modo de Navegacion </label>
+                    <select name="modoNavegacion" class="filtro-select">
+                        <option value="irrestricta"> Irrestricta</option>
+                        <option value="curada"> Curada</option>
+                    </select>
+            </div>
+
+            <div class="filtro-item">
+                <label class="filtro-label"> Provincia </label>
+                    <div id="filtro-provincias">
+                        <select name="provincia" class="filtro-select"
+                                hx-get="/home"
+                                hx-trigger="change"
+                                hx-target="#resultados"
+                                hx-include="[name='coleccionId'],[name='modoNavegacion'], [name='fechaDesde'], [name='fechaHasta']">
+                                {{> templates/partials/filtro-provincias}}
+                        </select>
+                    </div>
+            </div>
+
+            <div class="filtro-item">
+                <label class="filtro-label"> Fecha Desde </label>
+                    <div class="filtro-fecha">
+                        <input type="date" name="fechaDesde" value="{{fechaDesde}}">
+                    </div>
+            </div>
+
+            <div class="filtro-item">
+                <label class="filtro-label"> Fecha Hasta </label>
+                    <div class="filtro-fecha">
+                        <input type="date" name="fechaHasta" value="{{fechaHasta}}">
+                    </div>
+            </div>
+
+            <div class="filtro-item">
+                <button class="boton boton-buscar">Aplicar</button>
+            </div>
+        </form>
+    </div>
+        <div id="resultados" class="container-tarjetas">
+            {{> templates/partials/resultados}}
+        </div>
+
+    </div>
+{{/partial}}
+{{#partial "footer"}} {{/partial}}
+
+{{> templates/layout/layout}}
