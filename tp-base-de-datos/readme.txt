@@ -1,5 +1,3 @@
-Curso: K3052
-Numero de grupo: 75
-Nombre y Legajos: Agustin Manuel Gualtieri 207581-7 / Matias Fabian Aponte 208878-2 / Ezequiel Dante  Aruquipa Vargas 164257-1 / Ramon Valenzuela 204131-5
-Mail del responsable: rvalenzuela@frba.utn.edu.ar
+TP BASE DE DATOS 
+En este proyecto tuvimos que realizar una migracion completa desde una tabla de datos unica en donde contenia todos los datos mezclados a una organizacion mucha mas ordenada teniendo en cuenta la formas de normalizacion.
 
